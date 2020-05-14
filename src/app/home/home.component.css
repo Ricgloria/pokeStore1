@@ -1,7 +1,42 @@
 .container {
+  background-color: #f1f1f1;
+  width: 100%;
+  height: auto;
+}
+
+.filter {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  background-color: #ffffff;
+  height: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  align-content: center;
+  display: grid;
+  column-gap: 15px;
+  padding-left: 55px;
+  grid-template-columns: auto minmax(auto, 500px);
+  justify-content: flex-start;
+  box-shadow: 0 8px 5px -4px rgba(0,0,0,.16);
+}
+
+.filter-text {
+  color: rgba(0, 0, 0, .65);
+  margin: 0;
+  align-self: center;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding: 0;
+}
+
+.poke-area {
+  padding-top: 80px;
   display: flex;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: #f1f1f1;
 }

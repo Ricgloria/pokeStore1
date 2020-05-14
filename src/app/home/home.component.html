@@ -1,6 +1,15 @@
 <div class="container">
-  <ng-container *ngFor="let poke of pokemon">
-    <app-poke-card [pokemon]="poke"></app-poke-card>
-  </ng-container>
+  <div class="filter">
+    <h1 class="filter-text">Compre Seu Pokemon de Fogo</h1>
+    <mat-form-field class="input" appearance="outline">
+      <input [formControl]="filterControl" matInput placeholder="Busque aqui seu Pokemon">
+    </mat-form-field>
+  </div>
+  <div class="poke-area">
+    <ng-container *ngFor="let poke of filteredPokemon">
+      <app-poke-card [pokemon]="poke"></app-poke-card>
+    </ng-container>
+  </div>
 </div>
+
 

@@ -6,6 +6,9 @@ import { PokeCardComponent } from './components/poke-card/poke-card.component';
 import {registerLocaleData} from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {ReactiveFormsModule} from '@angular/forms';
 
 registerLocaleData(localePt, 'pt');
 
@@ -14,7 +17,10 @@ registerLocaleData(localePt, 'pt');
   imports: [
     CommonModule,
     HomeRoutingModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    MatIconModule,
+    ReactiveFormsModule
   ],
   exports: [HomeComponent],
   providers: [
