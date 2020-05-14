@@ -1,0 +1,8 @@
+<mat-card class="card">
+  <div class="poke-container">
+    <img class="img" [src]="pokemon?.pokemon?.image" (error)="pokemon.pokemon.image = 'assets/imgs/sem-foto.webp'">
+    <h2 class="text">{{pokemon.pokemon.name}}</h2>
+    <p class="price">{{pokemon.pokemon.price | currency: 'BRL' : 'symbol'}}</p>
+  </div>
+</mat-card>
+
