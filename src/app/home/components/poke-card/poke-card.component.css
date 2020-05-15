@@ -4,22 +4,23 @@
 
 .poke-container {
   display: grid;
-  justify-items: center;
+  justify-content: center;
   grid-template-columns: 150px;
   grid-template-rows: repeat(5, auto);
 }
 
 .img {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: auto;
 }
 
 .text {
-  max-width: 150px;
+  text-align: center;
+  max-width: 100%;
   text-transform: capitalize;
   margin-bottom: 0;
   font-size: 18px;
-  color: rgba(0,0,0,.65);
+  color: rgba(0, 0, 0, .65);
 }
 
 .ellipsis {
@@ -29,9 +30,16 @@
 }
 
 .price {
-  color: rgba(0,0,0,.65);
+  text-align: center;
+  color: rgba(0, 0, 0, .65);
 }
 
 .button {
   width: 100%;
+}
+
+@media screen and (max-width: 575px) {
+  .poke-container {
+    grid-template-columns: 85%;
+  }
 }
