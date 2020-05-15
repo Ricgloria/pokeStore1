@@ -10,7 +10,7 @@
   left: 0;
   top: 0;
   z-index: 999;
-  background-color: #ffffff;
+  background-color: #3f51b5;
   height: auto;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -27,6 +27,7 @@
   color: rgba(0, 0, 0, .65);
   margin: 0;
   align-self: center;
+  text-align: center;
 }
 
 ::ng-deep .mat-form-field-wrapper {
@@ -39,4 +40,22 @@
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+@media screen and (max-width: 575px){
+  .filter {
+    justify-content: center;
+    padding-left: 0;
+    grid-template-columns: 95%;
+    grid-template-rows: auto auto;
+    row-gap: 5px;
+  }
+
+  .poke-area {
+    padding-top: 110px;
+  }
+
+  .filter-text {
+    font-size: 20px;
+  }
 }

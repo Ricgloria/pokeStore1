@@ -9,19 +9,21 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
 
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
   declarations: [HomeComponent, PokeCardComponent],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    MatCardModule,
-    MatInputModule,
-    MatIconModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        CommonModule,
+        HomeRoutingModule,
+        MatCardModule,
+        MatInputModule,
+        MatIconModule,
+        ReactiveFormsModule,
+        MatButtonModule
+    ],
   exports: [HomeComponent],
   providers: [
     {
