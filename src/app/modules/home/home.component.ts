@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Pokemon} from '../interfaces/pokemon-interface';
-import {PokeStoreService} from '../api/poke-store.service';
+import {Pokemon} from '../../shared/interfaces/pokemon-interface';
+import {PokeStoreService} from '../../core/api/poke-store.service';
 import {FormControl} from '@angular/forms';
 import {HomeService} from './home.service';
 
@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
 
   pokemon: Pokemon[];
   filteredPokemon: Pokemon[];
-  cartPokemon: Pokemon;
   filterControl = new FormControl();
   pokeImage = 'https://pokeres.bastionbot.org/images/pokemon/';
   loadState = true;

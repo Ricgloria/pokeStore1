@@ -1,0 +1,7 @@
+<div class="dialog">
+  <div class="header">
+    <h1>Obrigado</h1>
+    <button mat-icon-button (click)="onClose()"><mat-icon>close</mat-icon></button>
+  </div>
+  <p class="text">Seu total de compras foi: {{data.totalValue |  currency: 'BRL' : 'symbol'}}</p>
+</div>

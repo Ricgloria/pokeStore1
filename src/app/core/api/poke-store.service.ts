@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {environment} from '../../environments/environment';
+import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {PokemonInterface} from '../interfaces/pokemon-interface';
+import {PokemonInterface} from '../../shared/interfaces/pokemon-interface';
 
 @Injectable({
   providedIn: 'root'

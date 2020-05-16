@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
-import {Pokemon} from '../interfaces/pokemon-interface';
+import {Pokemon} from '../../shared/interfaces/pokemon-interface';
 
 @Injectable({
   providedIn: 'root'
