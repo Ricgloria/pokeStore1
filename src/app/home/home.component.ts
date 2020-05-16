@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Pokemon} from '../interfaces/pokemon-interface';
 import {PokeStoreService} from '../api/poke-store.service';
 import {FormControl} from '@angular/forms';
+import {HomeService} from './home.service';
 
 @Component({
   selector: 'app-home',
@@ -12,11 +13,14 @@ export class HomeComponent implements OnInit {
 
   pokemon: Pokemon[];
   filteredPokemon: Pokemon[];
+  cartPokemon: Pokemon;
   filterControl = new FormControl();
   pokeImage = 'https://pokeres.bastionbot.org/images/pokemon/';
+  loadState = true;
 
   constructor(
-    private pokeStoreService: PokeStoreService
+    private pokeStoreService: PokeStoreService,
+    private homeService: HomeService
   ) {
   }
 
@@ -27,6 +31,7 @@ export class HomeComponent implements OnInit {
 
   getPokemonRequest() {
     this.pokeStoreService.getPokemon().subscribe(data => {
+      this.loadState = false;
       this.pokemon = data.pokemon;
       this.getUrlImage();
     });
@@ -58,4 +63,9 @@ export class HomeComponent implements OnInit {
     const upperValue = value.toUpperCase();
     return this.pokemon.filter(pok => pok.pokemon.name.toUpperCase().includes(upperValue));
   }
+
+  toCartPokemon(pokemon: Pokemon) {
+    this.homeService.setCartPokemon(pokemon);
+  }
+
 }

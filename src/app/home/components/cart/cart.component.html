@@ -1,0 +1,16 @@
+<div class="cart-container">
+  <div class="cart-header">
+    <h2 class="cart-title">Carrinho</h2>
+  </div>
+  <div class="cart-poke">
+    <ng-container *ngFor="let pokemon of pokemonOnCart; let i = index">
+      <app-cart-item (deletedArrayIndex)="onDeletePokemonCartItem($event)"
+                     [index]="i" [pokemon]="pokemon">
+      </app-cart-item>
+    </ng-container>
+  </div>
+  <div class="buy">
+    <span class="buy-text">Total: {{total | currency: 'BRL' : 'symbol'}}</span>
+    <button class="buy-button" mat-flat-button>Finalizar a compra</button>
+  </div>
+</div>

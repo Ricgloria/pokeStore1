@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Pokemon} from '../../../interfaces/pokemon-interface';
 
 @Component({
@@ -9,10 +9,15 @@ import {Pokemon} from '../../../interfaces/pokemon-interface';
 export class PokeCardComponent implements OnInit {
 
   @Input() pokemon: Pokemon;
+  @Output() toCartPokemon = new EventEmitter<Pokemon>(undefined);
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onAddToCart() {
+    this.toCartPokemon.emit(this.pokemon);
   }
 
 }

@@ -10,11 +10,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
+import { CartComponent } from './components/cart/cart.component';
+import { CartItemComponent } from './components/cart/cart-item/cart-item.component';
 
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
-  declarations: [HomeComponent, PokeCardComponent],
+  declarations: [HomeComponent, PokeCardComponent, CartComponent, CartItemComponent],
     imports: [
         CommonModule,
         HomeRoutingModule,

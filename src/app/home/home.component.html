@@ -1,14 +1,19 @@
+<div class="filter">
+  <h1 class="filter-text">Compre Seu Pokemon de Fogo</h1>
+  <mat-form-field class="input" appearance="standard">
+    <input [formControl]="filterControl" matInput placeholder="Busque aqui seu Pokemon">
+  </mat-form-field>
+</div>
 <div class="container">
-  <div class="filter">
-    <h1 class="filter-text">Compre Seu Pokemon de Fogo</h1>
-    <mat-form-field class="input" appearance="standard">
-      <input [formControl]="filterControl" matInput placeholder="Busque aqui seu Pokemon">
-    </mat-form-field>
-  </div>
   <div class="poke-area">
     <ng-container *ngFor="let poke of filteredPokemon">
-      <app-poke-card [pokemon]="poke"></app-poke-card>
+      <app-poke-card (toCartPokemon)="toCartPokemon($event)" [pokemon]="poke"></app-poke-card>
     </ng-container>
+  </div>
+  <div class="cart-area">
+    <div class="cart-fixed-container">
+      <app-cart></app-cart>
+    </div>
   </div>
 </div>
 

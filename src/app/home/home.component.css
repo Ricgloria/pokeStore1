@@ -2,6 +2,8 @@
   background-color: #f1f1f1;
   width: 100%;
   height: auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .filter {
@@ -12,12 +14,11 @@
   z-index: 999;
   background-color: #3f51b5;
   height: auto;
-  padding-top: 5px;
-  padding-bottom: 5px;
   align-content: center;
   display: grid;
   column-gap: 15px;
-  padding-left: 55px;
+  align-items: center;
+  padding: 10px 55px;
   grid-template-columns: auto minmax(auto, 500px);
   justify-content: flex-start;
   box-shadow: 0 8px 5px -4px rgba(0,0,0,.16);
@@ -28,6 +29,17 @@
   margin: 0;
   align-self: center;
   text-align: center;
+}
+
+.cart-area {
+  padding-top: 60px;
+  position: relative;
+}
+
+.cart-fixed-container {
+  position: fixed;
+  height: calc(100vh - 60px);
+  right: 0;
 }
 
 ::ng-deep .mat-form-field-wrapper {
@@ -47,26 +59,52 @@
   font-weight: bold;
 }
 
+::ng-deep .mat-form-field-appearance-standard .mat-form-field-flex {
+  padding-top: 0!important;
+}
+
+
 ::ng-deep.mat-form-field-infix {
-  padding: 10px 10px !important;
+  padding: 15px 10px 10px!important;
   border-top: none;
 }
 
 .poke-area {
+  width: 100%;
   padding-top: 80px;
   display: flex;
+  padding-right: 300px;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 575px){
+@media screen and (max-width: 900px){
+  .cart-area {
+    padding-top: 80px;
+  }
+
+  .cart-fixed-container {
+    height: calc(100vh - 80px);
+  }
+}
+
+@media screen and (max-width: 630px){
   .filter {
     justify-content: center;
     padding-left: 0;
-    grid-template-columns: 95%;
+    padding-right: 0;
+    grid-template-columns: minmax(auto, 280px);
     grid-template-rows: auto auto;
     row-gap: 5px;
+  }
+
+  .cart-area {
+    padding-top: 90px;
+  }
+
+  .cart-fixed-container {
+    height: calc(100vh - 90px);
   }
 
   .poke-area {
