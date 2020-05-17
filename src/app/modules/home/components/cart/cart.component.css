@@ -58,3 +58,36 @@
   color: #f1f1f1;
 }
 
+@media screen and (max-width: 425px){
+  .cart-container {
+    width: unset;
+    height: 146px;
+    transition: all linear .2s;
+  }
+
+  .cart-mobile-expanded {
+    height: 400px;
+  }
+
+  .cart-header-smartphone {
+    display: grid;
+    grid-template-columns: auto min-content;
+    grid-template-rows: auto;
+    align-items: center;
+    box-shadow: 0 8px 5px -4px rgba(0,0,0,.16);
+  }
+
+  .arrow-header {
+    transition: all linear .2s;
+    color: #f1f1f1;
+  }
+
+  .arrow-header-down {
+    transform: rotate(180deg);
+  }
+
+  .arrow-header-up {
+    transform: rotate(0deg);
+  }
+}
+

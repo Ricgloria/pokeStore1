@@ -40,6 +40,10 @@
 
 @media screen and (max-width: 575px) {
   .poke-container {
-    grid-template-columns: 85%;
+    grid-template-columns: 110px;
+  }
+
+  .card {
+    margin: 5px;
   }
 }

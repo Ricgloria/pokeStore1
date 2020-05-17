@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {Pokemon} from '../../../../shared/interfaces/pokemon-interface';
 import {HomeService} from '../../home.service';
 import {MatDialog} from '@angular/material/dialog';
@@ -13,6 +13,8 @@ export class CartComponent implements OnInit {
 
   pokemonOnCart: Pokemon[];
   total = 0;
+  isSmartPhone = false;
+  mobileCartExpanded = false;
 
   constructor(
     private homeService: HomeService,
@@ -21,8 +23,19 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isSmartPhone = this.smartphoneCheck();
     this.pokemonArrayBuilder();
   }
+
+  @HostListener('window:resize', [])
+  private onResize() {
+    this.isSmartPhone = this.smartphoneCheck();
+  }
+
+  smartphoneCheck(): boolean {
+    return window.innerWidth <= 425;
+  }
+
 
   pokemonArrayBuilder() {
     this.pokemonOnCart = [];

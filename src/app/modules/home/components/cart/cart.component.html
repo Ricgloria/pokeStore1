@@ -1,6 +1,15 @@
-<div class="cart-container">
-  <div class="cart-header">
+<div class="cart-container" [class.cart-mobile-expanded]="mobileCartExpanded">
+  <div *ngIf="!isSmartPhone" class="cart-header">
     <h2 class="cart-title">Carrinho</h2>
+  </div>
+  <div *ngIf="isSmartPhone" (click)="mobileCartExpanded = !mobileCartExpanded" class="cart-header-smartphone">
+    <h2 class="cart-title">Carrinho</h2>
+    <mat-icon
+      [class.arrow-header-down]="mobileCartExpanded"
+      [class.arrow-header-up]="!mobileCartExpanded"
+      class="arrow-header">
+      keyboard_arrow_down
+    </mat-icon>
   </div>
   <div class="cart-poke">
     <ng-container *ngFor="let pokemon of pokemonOnCart; let i = index">

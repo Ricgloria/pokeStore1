@@ -115,3 +115,23 @@
     font-size: 20px;
   }
 }
+
+@media screen and (max-width: 425px){
+  .container {
+    flex-direction: column-reverse;
+  }
+
+  .poke-area {
+    padding-right: 0;
+    padding-top: 0;
+  }
+
+  .cart-area {
+    padding-top: 95px;
+  }
+
+  .cart-fixed-container {
+    position: unset;
+    height: unset;
+  }
+}
