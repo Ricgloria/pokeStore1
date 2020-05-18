@@ -33,7 +33,7 @@ export class CartComponent implements OnInit {
   }
 
   smartphoneCheck(): boolean {
-    return window.innerWidth <= 425;
+    return window.innerWidth <= 575;
   }
 
 

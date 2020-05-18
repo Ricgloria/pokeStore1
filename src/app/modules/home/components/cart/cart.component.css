@@ -58,7 +58,7 @@
   color: #f1f1f1;
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 575px){
   .cart-container {
     width: unset;
     height: 146px;
@@ -74,6 +74,7 @@
     grid-template-columns: auto min-content;
     grid-template-rows: auto;
     align-items: center;
+    cursor: pointer;
     box-shadow: 0 8px 5px -4px rgba(0,0,0,.16);
   }
 
