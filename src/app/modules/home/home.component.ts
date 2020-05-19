@@ -15,7 +15,6 @@ export class HomeComponent implements OnInit {
   filteredPokemon: Pokemon[];
   filterControl = new FormControl();
   pokeImage = 'https://pokeres.bastionbot.org/images/pokemon/';
-  loadState = true;
 
   constructor(
     private pokeStoreService: PokeStoreService,
@@ -30,7 +29,6 @@ export class HomeComponent implements OnInit {
 
   getPokemonRequest() {
     this.pokeStoreService.getPokemon().subscribe(data => {
-      this.loadState = false;
       this.pokemon = data.pokemon;
       this.getUrlImage();
     });
